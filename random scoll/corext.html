@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="crect.css">
+  <title>مدرسة ادم الاهلية للبنين | الصفحة الرئيسية</title>
+  <style>
+    /* إعدادات عامة */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Cairo', sans-serif;
+      background-color: #f7f9fc;
+      color: #1c1e53;
+    }
+
+    /* تصميم Navbar */
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: #ffffff;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      left: 20px;
+    }
+
+    nav .logo img {
+      width: 100px; /* تكبير حجم اللوجو */
+            height: 100px;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)); /* ظل أنيق */
+            transition: transform 0.3s ease-in-out;
+    }
+
+    nav .logo a {
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      color: #5e3bee;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: 600;
+      color: #1c1e53;
+      padding: 10px 20px;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #5e3bee;
+      background-color: #e6e6fa;
+      border-radius: 8px;
+    }
+
+    /* تصميم صندوق الروابط */
+    .social-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #ffffff;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      margin: 50px auto;
+      width: 90%;
+      max-width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* أنميشن Hover (مع تحريك وتكبير عند التمرير) */
+    .social-box:hover {
+      transform: translateY(10px) scale(1.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .social-box a {
+      text-decoration: none;
+      color: #1c1e53;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 10px 0;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+    }
+
+    .social-box a i {
+      margin-right: 10px;
+      font-size: 24px;
+    }
+
+    .social-box a:hover {
+      color: #5e3bee;
+    }
+
+    /* أنميشن عند الضغط باستخدام CSS Keyframes */
+    @keyframes clickAnimation {
+      0% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(10px) scale(1.1); }
+      100% { transform: translateY(0) scale(1); }
+    }
+
+    .animate-click {
+      animation: clickAnimation 0.3s ease;
+    }
+
+    /* استجابة لجميع مقاسات الشاشات */
+    @media (max-width: 768px) {
+      .social-box {
+        padding: 15px;
+        max-width: 90%;
+      }
+
+      .social-box a {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <!-- شعار المدرسة -->
+    <div class="logo">
+      <img src=".vscode/photo_2025-03-22_21-28-38-removebg-preview.png" alt="شعار المدرسة">
+      <a href="#">مدرسة ادم الاساسية للبنين</a>
+    </div>
+    <!-- رابط الصفحة الرئيسية -->
+    <ul>
+      <li><a href="#">الرئيسية</a></li>
+    </ul>
+  </nav>
+
+  <!-- صندوق روابط السوشيال مع الأيقونات -->
+  <div class="social-box">
+    <a href="https://wa.me/9647765607002"><i class='bx bxl-whatsapp'></i>واتساب</a>
+    <a href="https://www.instagram.com/adam_school_/#"><i class='bx bxl-instagram'></i>إنستقرام</a>
+    <a href="https://www.facebook.com/share/18SdUs2Hh3/?mibextid=wwXIfr"><i class='bx bxl-facebook'></i>فيسبوك</a>
+  </div>
+
+  <script>
+    <script>
+  // إضافة حدث عند الضغط على أي من الروابط داخل الصندوق
+  document.querySelectorAll('.social-box a').forEach(link => {
+    link.addEventListener('click', function (event) {
+      // منع التنقل الفوري
+      event.preventDefault();
+
+      // إضافة الكلاس الذي يفعّل الأنميشن على الصندوق
+      const socialBox = document.querySelector('.social-box');
+      socialBox.classList.add('animate-click');
+
+      // انتظار انتهاء الأنميشن ثم الانتقال إلى الرابط
+      setTimeout(() => {
+        socialBox.classList.remove('animate-click');
+        window.location.href = this.href; // الانتقال إلى الرابط
+      }, 300); // مدة الأنميشن (300ms)
+    });
+  });
+</script>
+
+</body>
+</html>
